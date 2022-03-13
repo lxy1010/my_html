@@ -1,0 +1,16 @@
+{% extends 'hello_world/base.html' %}
+
+{% block content %}
+    <p>项目：{{ topic }}</p>
+
+    <p>内容:</p>
+    <ul>
+    {% for entry in Entries %}
+        <li>
+            <p>{{ entry.text|linebreaks }}</p>
+        </li>
+    {% empty %}
+        <li>not has</li>
+    {% endfor %}
+    </ul>
+{% endblock content %}
